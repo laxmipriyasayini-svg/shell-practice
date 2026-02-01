@@ -4,7 +4,7 @@ USERID=$(id -u)
 LOGS_FOLDER="/var/log/shell-script"
 LOGS_FILE="/var/log/shell-script/$0.log"
 
-if [ $UERID -ne 0 ]; then
+if [ $USERID -ne 0 ]; then
 echo "please run this script with root user access" | tee -a $LOGS_FILE
 exit 1
 fi
