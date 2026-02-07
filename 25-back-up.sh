@@ -52,6 +52,6 @@ log "Destination Directory: $DEST_DIR"
 log "Days: $DAYS"
  
  if [ -z $FILES ]; then
-  log -e "No files to archieve ... $Y Skipping $N"
+  log  "No files to archieve ... $Y Skipping $N"
   fi
 
