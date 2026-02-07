@@ -12,7 +12,8 @@ log(){
   DISK_USAGE=$(df -hT | grep -v Filesystem)
   USAGE_THRESHOLD=3
 
-  while IFS= read -r line; do
+  while IFS= read -r line 
+  do
   USAGE=$($line | awk '{print $6}' | cut -d "%" -f1)
   PARTITION=$($line | awk '{print $7}')
 
