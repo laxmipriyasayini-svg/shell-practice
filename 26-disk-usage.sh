@@ -5,10 +5,11 @@ G="\e[32m"
 Y="\e[33m"
 N="\e[0m"
 MESSAGE=""
+# IP_ADDRESS=$(curl http://169.254.169.254/latest/meta-data/local-ipv4)
 IP_ADDRESS=$(curl http://169.254.169.254/latest/meta-data/local-ipv4)
 
 log(){
-    echo -e "$(date "+%Y-%m-%d %H:%M:%S") | $1" | tee -a $LOGS_FILE
+    echo -e "$(date "+%Y-%m-%d %H:%M:%S") | $1" 
   }
 
   DISK_USAGE=$(df -hT | grep -v Filesystem)
@@ -27,4 +28,6 @@ log(){
 
   echo -e "$MESSAGE"
 
-  sh mail.sh "laxmipriyasayini@gmail.com" "High Disk Usage Alert on $IP_ADDRESS" "$MESSAGE" "HIGH_DISK_USAGE" "$IP_ADDRESS" "DevOps Team"
+  # sh mail.sh "laxmipriyasayini@gmail.com" "High Disk Usage Alert on $IP_ADDRESS" "$MESSAGE" "HIGH_DISK_USAGE" "$IP_ADDRESS" "DevOps Team"
+
+  sh mail.sh "laxmip595@gmail.com" "High Disk Usage Alert on $IP_ADDRESS" "$MESSAGE" "HIGH_DISK_USAGE" "$IP_ADDRESS" "DevOps Team"
