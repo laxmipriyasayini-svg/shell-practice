@@ -19,6 +19,7 @@ log(){
   if [ $USAGE -gt $USAGE_THRESHOLD ]; then
      MESSAGE+="High Disk usage on $PARTITION:$USAGE"
 
+  # done <<< $DISK_USAGE
   done <<< $DISK_USAGE
 
   echo "$MESSAGE"
