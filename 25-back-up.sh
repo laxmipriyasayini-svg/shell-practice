@@ -18,14 +18,14 @@ DAYS=${3:-14} # 14 days i the default valuve, if the user not supplied
 
 
 if [ $USERID -ne 0 ]; then
-   log -e " $R Please run this script with root user access $N"
+   log  " $R Please run this script with root user access $N"
    exit 1
    fi
 
    mkdir -p $LOGS_DIR
   
   USAGE(){
-    log -e " $R USAGE:: sudo backup <SOURCE_DIR> <DEST_DIR> [default 14 days] $N"
+    log  " $R USAGE:: sudo backup <SOURCE_DIR> <DEST_DIR> [default 14 days] $N"
     exit 1
   }
 
@@ -36,12 +36,12 @@ if [ $USERID -ne 0 ]; then
 
 
 if [ ! -d $SOURCE_DIR ]; then
-    log -e "$R source directory: $SOURCE_DIR does not exist $N"
+    log  "$R source directory: $SOURCE_DIR does not exist $N"
     exit 1
 fi
 
 if [ ! -d $DEST_DIR ]; then
-    log -e "$R Destination directory:$DEST_DIR does not exist $N"
+    log  "$R Destination directory:$DEST_DIR does not exist $N"
     exit 1
 fi
 
